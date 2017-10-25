@@ -5,13 +5,12 @@ public class Score {
     int sum;
     float aver;
 
-    static void init(Score score, String name, int kor, int eng, int math) {
-        score.name = name;
-        score.subjects[0] = kor;
-        score.subjects[1] = eng;
-        score.subjects[2] = math;
-
-        compute(score);
+    Score(String name, int kor, int eng, int math) {
+        this.name = name; //this가 안붙으면 가장 가까운 name을 찾는다 -> 만약 없으면 this가 자동으로 붙음
+        this.subjects[0] = kor;
+        this.subjects[1] = eng;
+        this.subjects[2] = math;
+        compute(this);
     }
 
     static void compute(Score score) {

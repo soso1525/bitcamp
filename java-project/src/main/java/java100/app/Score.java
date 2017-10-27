@@ -1,4 +1,5 @@
 package java100.app;
+
 import java.util.Scanner;
 
 public class Score {
@@ -7,7 +8,7 @@ public class Score {
     protected int sum;
     protected float aver;
 
-    Score() {
+    public Score() {
         this.subjects = new int[3];
     }
 
@@ -17,7 +18,7 @@ public class Score {
         compute();
     }
 
-    void input() {
+    public void input() {
         Scanner sc = new Scanner(System.in);
         System.out.print("이름? ");
         this.name = sc.nextLine();
@@ -30,14 +31,14 @@ public class Score {
         this.compute();
     }
 
-    void compute() {
+    private void compute() {
         for (int sub : this.subjects)
             this.sum += sub;
 
         this.aver = this.sum / (float) this.subjects.length;
     }
 
-    void print() {
+    public void print() {
         System.out.printf("%-4s, %4d, %4d, %4d, %4d, %6.1f\n", this.name, this.subjects[0], this.subjects[1],
                 this.subjects[2], this.sum, this.aver);
     }

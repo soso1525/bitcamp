@@ -5,7 +5,7 @@ public class App {
     public static void main(String[] args) {
         ArrayList list = new ArrayList();
         while (list.checkState()) {
-
+ 
             System.out.println();
 
             Score score = new Score();

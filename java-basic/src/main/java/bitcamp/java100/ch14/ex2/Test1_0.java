@@ -12,6 +12,7 @@ public class Test1_0 {
         int c = 0;
         while (c != -1) {
             c = in.read();
+            System.out.println(Integer.toHexString(c));
 
             size += 1;
         }

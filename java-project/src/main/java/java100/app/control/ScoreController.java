@@ -1,10 +1,12 @@
 package java100.app.control;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Iterator;
-import java.util.Scanner;
 
 import java100.app.domain.Score;
 import java100.app.util.Prompts;
@@ -24,14 +26,15 @@ public class ScoreController extends GenericController<Score> {
     @Override
     public void destroy() {
 
-        try (FileWriter out = new FileWriter(this.dataFilePath);) {
+        try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(this.dataFilePath)))) {
             for (Score score : this.list) {
-                out.write(score.toCSVString() + "\n");
-                // 기존에는 성적에 따른 포맷을 여기서 지정해주었지만
-                // Score 클래스내부에서 처리하도록 하면서
-                // 클래스간 상호의존도를 낮춤
-                // 성적 정보에 수정이 필요할 시 Score 클래스만 변경하면 됨
+                out.println(score.toCSVString());
             }
+
+            // 버퍼에 남은 찌꺼기를 마저 출력한다.
+            // => 물론 close()가 호출되도 버퍼에 남은 찌꺼기가 출력될 것이다.
+            // => 그래도 가능한 명시적으로 출력하자!
+            out.flush();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -44,14 +47,12 @@ public class ScoreController extends GenericController<Score> {
     @Override
     public void init() {
 
-        try (FileReader in = new FileReader(this.dataFilePath); Scanner lineScan = new Scanner(in);) {
+        try (BufferedReader in = new BufferedReader(new FileReader(this.dataFilePath));) {
 
             String csv = null;
-            while (lineScan.hasNextLine()) {
-                csv = lineScan.nextLine();
+            while ((csv = in.readLine()) != null) {
                 try {
-                    list.add(new Score(csv)); // try-catch문을 안하면 예외가 발생하는 것은 아는데 무슨 예외인지 몰라용 > exception 클래스를 상속하여 정확한
-                                              // 예외 유형을 지정
+                    list.add(new Score(csv));
                 } catch (CSVFormatException e) {
                     System.err.println("CSV 데이터 형식 오류!");
                     e.printStackTrace();

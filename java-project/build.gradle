@@ -51,11 +51,20 @@ javadoc {
 }
 
 dependencies {
+ // MySQL DBMS의 JDBC Driver
+    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.44'
+    
     // This dependency is found on compile classpath of this component and consumers.
     compile 'com.google.guava:guava:22.0'
 
     // Use JUnit test framework
     testCompile 'junit:junit:4.12'
+    
+    // Use reflections API
+    compile group: 'org.reflections', name: 'reflections', version: '0.9.11'
+    
+    // Use Spring framework
+    compile 'org.springframework:spring-context:5.0.2.RELEASE'
 }
 
 // Define the main class for the application

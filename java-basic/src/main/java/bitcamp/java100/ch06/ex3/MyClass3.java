@@ -17,4 +17,4 @@ public class MyClass3 {
         System.out.println("MyClass3의 static 블록 실행222");
     }
 }
-     
+              

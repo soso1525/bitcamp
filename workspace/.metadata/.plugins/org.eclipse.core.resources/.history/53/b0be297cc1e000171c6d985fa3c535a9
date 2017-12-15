@@ -1,0 +1,75 @@
+<%@page import="java100.app.domain.Room"%>
+<%@page import="java.io.PrintWriter"%>
+<%@page import="java100.app.listener.ContextLoaderListener"%>
+<%@page import="java100.app.dao.RoomDao"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
+<%
+    RoomDao roomDao = ContextLoaderListener.iocContainer.getBean(RoomDao.class);
+    PrintWriter out2 = new PrintWriter(out);
+%>
+
+out.println("
+<!DOCTYPE html>
+"); out.println("
+<html>
+"); out.println("
+<head>
+"); out.println("
+<title>강의실 관리</title>"); out.println("
+<link rel='stylesheet'
+	href='../node_modules/bootstrap/dist/css/bootstrap.min.css'>
+"); out.println("
+<link rel='stylesheet' href='../css/common.css'>
+"); out.println("
+</head>
+"); out.println("
+<body>
+	"); out.println("
+	<div class='container'>
+		");
+
+		<%
+    out.flush();
+    RequestDispatcher rd = request.getRequestDispatcher("/header.jsp");
+    rd.include(request, response);
+%>
+
+		out.println("
+		<h1>강의실 등록 결과</h1>
+		");
+
+		<%
+    try {
+        Room room = new Room();
+        room.setLocation(request.getParameter("location"));
+        room.setName(request.getParameter("name"));
+        room.setCapacity(Integer.parseInt(request.getParameter("capacity")));
+
+        roomDao.insert(room);
+        out.println("<p>저장하였습니다.</p>");
+
+    } catch (Exception e) {
+        e.printStackTrace();
+        out.println(e.getMessage());
+    }
+%>
+
+		out.println("
+		<p>
+			<a href='list.jsp' class='btn btn-primary btn-sm'>목록</a>
+		</p>
+		");
+
+		<%
+		    out.flush();
+		    rd = request.getRequestDispatcher("/footer.jsp");
+		    rd.include(request, response);
+		%>
+
+	</div>
+	<script src='../node_modules/jquery/dist/jquery.slim.min.js'></script>
+	<script src='../node_modules/popper.js/dist/umd/popper.min.js'></script>
+	<script src='../node_modules/bootstrap/dist/js/bootstrap.min.js'></script>
+</body>
+</html>

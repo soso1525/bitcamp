@@ -1,0 +1,12 @@
+package step8;
+
+import java.net.Socket;
+import java.util.Scanner;
+
+public class Servlet05 {
+    public static void main(String[] args) throws Exception {
+        Socket s = new Socket("localhost", 9999);
+
+        Scanner sc = new Scanner(s.getInputStream());
+    }
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>POST 요청</title>
+</head>
+<body>
+	<h1>POST 요청의 예</h1>
+    POST 요청으로 데이터를 보낼 때는 URL이 아닌 message-body 영역에
+	<h2>3. 폼(method 속성에 POST 지정)</h2>
+	<form action="Servlet01" method="POST">
+		name: <input type="text" name="name"><br> 
+		 age: <input type ="text" name="age"><br>
+		<button>POST 요청</button>
+	</form>
+
+	<h2>4. 자바스크립트: location.href="url"</h2>
+	자바스크립트의 location 객체를 사용하면 GET 요청을 할 수 있다.<br>
+	<button onclick="location.href='Servlet01?name=안중근&age=20'">GET 요청</button>
+
+</body>
+</html>

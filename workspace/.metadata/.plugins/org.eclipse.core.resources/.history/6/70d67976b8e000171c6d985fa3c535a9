@@ -1,0 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
+PrintWriter out = response.getWriter();
+        out.println("<footer>");
+        out.println("BITCAMP JAVA100@2017");
+        out.println("</footer>");

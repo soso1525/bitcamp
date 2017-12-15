@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>GET 요청</title>
+</head>
+<body>
+    <h1>GET 요청의 예</h1>
+    <h2>0. 웹브라우저에 URL 입력</h2>
+    <p>"http://localhost:9999/java-web/step8/Servlet01"과 같은 URL 주소를 웹 브라우저에 입력하면 웹 브라우저는 무조건 GET 요청을 보낸다.</p>
+    <h2>1. 링크</h2>
+    <a href="Servlet01">링크 </a>를 누르면 웹브라우저는 서버에 GET 요청을 보낸다.</a>
+</body>
+</html>

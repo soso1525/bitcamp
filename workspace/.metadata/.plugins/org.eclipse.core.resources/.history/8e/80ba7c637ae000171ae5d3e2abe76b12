@@ -1,0 +1,8 @@
+package step9;
+
+import javax.servlet.http.HttpServlet;
+
+@WebServlet("/step9/OtherServlet")
+public class OtherServlet extends HttpServlet {
+
+}

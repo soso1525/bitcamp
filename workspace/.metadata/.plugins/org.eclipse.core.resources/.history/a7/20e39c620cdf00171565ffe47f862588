@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML5 Basic</title>
+</head>
+<body>
+    <form>
+        text: <input type="text" /><br />
+        button: <input type="button" /><br />
+        checkbox: <input type="checkbox" name="lang" value="java"/>JAVA
+                  <input type="checkbox" name="lang" value="c" />C<br/>
+        checkbox: <input type="checkbox" name="saveEmail" />이메일 저장<br/>
+        file: <input type="file" /><br />
+        hidden: <input type="hidden" value="aa"/><br />
+        image: <input type="image" /><br />
+        password: <input type="password" /><br />
+        radio: <input type="radio" name="type"/>학생
+               <input type="radio" name="type"/>재직자
+               <input type="radio" name="type"/>구직자
+               <input type="radio" name="oversea"/>국내
+               <input type="radio" name="oversea"/>해외 <br/>
+        reset: <input type="reset" /><br />
+        submit: <input type="submit" />
+    </form>
+</body>
+</html>

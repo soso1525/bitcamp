@@ -8,6 +8,11 @@ public class Engine {
     public Engine() {
         System.out.println("Engine()");
     }
+    
+    @Override
+    public String toString() {
+        return "Engine [name=" + name + ", valve=" + valve + ", cc=" + cc + "]";
+    }
 
     public String getName() {
         return name;

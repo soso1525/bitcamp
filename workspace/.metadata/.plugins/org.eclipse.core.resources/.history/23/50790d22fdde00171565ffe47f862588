@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML TEXT Basic Page</title>
+</head>
+<body>
+    <h1>ABC<b>Lorem ipsum dolor sit amet</b>XYZ</h1>
+    <h1>ABC<i>Lorem ipsum dolor sit amet</i>XYZ</h1>
+    <h1>ABC<small>Lorem ipsum dolor sit amet</small>XYZ</h1>
+    <h1>ABC<sub>Lorem ipsum dolor sit amet</sub>XYZ</h1>
+    <h1>ABC<sup>Lorem ipsum dolor sit amet</sup>XYZ</h1>
+    <h1>ABC<ins>Lorem ipsum dolor sit amet</ins>XYZ</h1>
+    <h1>ABC<del>Lorem ipsum dolor sit amet</del>XYZ</h1>
+    <hr />
+    <b>Lorem ipsum dolor sit amet</b>XYZ<br />
+    <i>Lorem ipsum dolor sit amet</i>XYZ<br />
+    <small>Lorem ipsum dolor sit amet</small>XYZ<br />
+    <sub>Lorem ipsum dolor sit amet</sub>XYZ<br />
+    <sup>Lorem ipsum dolor sit amet</sup>XYZ<br />
+    <ins>Lorem ipsum dolor sit amet</ins>XYZ<br />
+    <del>Lorem ipsum dolor sit amet</del>XYZ<br />
+</body>
+</html>

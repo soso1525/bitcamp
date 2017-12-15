@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Servlet05 TEST</title>
+</head>
+<body>
+	<h1>Servlet05 테스트 페이지</h1>
+	<p>웹 브라우저에서 데이터를 보내는 방식을 테스트하기 위한 페이지</p>
+	<h1>GET 요청</h1>
+	<form action="http://localhost:9999/java-web/step5/Servlet05" method="GET">
+		이름: <input type="text" name="name"><br> 
+		나이: <input type="text" name="age"><br> 
+		재직: <input type="text" name="working"><br>
+		<button>요청</button>
+	</form>
+	<hr>
+    <h1>post 요청</h1>
+	<form action="http://localhost:9999/java-web/step5/Servlet05" method="POST">
+		이름: <input type="text" name="name"><br> 
+		나이: <input type="text" name="age"><br> 
+		재직: <input type="text" name="working"><br>
+		<button>요청</button>
+	</form>
+	<hr>
+</body>
+</html>

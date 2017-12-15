@@ -1,0 +1,10 @@
+package step9;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+@SuppressWarnings("serial")
+@WebServlet("/step9/HeaderServlet")
+public class FooterServlet extends HttpServlet {
+
+}

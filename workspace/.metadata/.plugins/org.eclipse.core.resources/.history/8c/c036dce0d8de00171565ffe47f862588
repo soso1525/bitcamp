@@ -1,0 +1,49 @@
+package step8;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.FileUploadException;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
+
+@SuppressWarnings("serial")
+@WebServlet("/step8/Servlet10")
+public class Servlet10 extends HttpServlet {
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+
+        String name = null;
+        String age = null;
+        String photo1Filename = null;
+        String photo2Filename = null;
+
+        /* 멀티파트로 전송된 데이터를 분석하는 코드를 작성하라 */
+
+        // Create a factory for disk-based file items
+        DiskFileItemFactory factory = new DiskFileItemFactory();
+        ServletFileUpload upload = new ServletFileUpload(factory);
+        try {
+            List<FileItem> items = upload.parseRequest(req);
+        } catch (FileUploadException e) {
+            e.printStackTrace();
+        }
+
+        req.setCharacterEncoding("UTF-8");
+        res.setContentType("text/plain;charset=UTF-8");
+        PrintWriter out = res.getWriter();
+
+        out.printf("이름 : %s\n", name);
+        out.printf("나이 : %s\n", age);
+        out.printf("사진1 : %s\n", photo1Filename);
+        out.printf("사진2 : %s\n", photo2Filename);
+    }
+}

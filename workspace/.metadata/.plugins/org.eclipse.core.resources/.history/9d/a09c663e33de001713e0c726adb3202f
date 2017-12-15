@@ -1,0 +1,10 @@
+package step8;
+
+import java.net.Socket;
+
+public class Servlet05 {
+    public static void main(String[] args) throws Exception {
+        Socket s = new Socket("localhost", 9999);
+        
+    }
+}

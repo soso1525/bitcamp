@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>GET/POST 요청</title>
+</head>
+<body>
+	<h1>GET/POST 요청 구분하여 처리하기</h1>
+	
+	<h2>GET 요청</h2>
+	<form action="Servlet02">
+		name: <input type="text" name="name"><br> 
+		age: <input type ="text" name="age"><br>
+		<button>GET 요청</button>
+	</form>
+
+	<h2>POST 요청</h2>
+	<form action="Servlet02" method="POST">
+		name: <input type="text" name="name"><br> 
+		age: <input type ="text" name="age"><br>
+		<button>GET 요청</button>
+	</form>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JSP 예제</title>
+</head>
+<body>
+<h1>JSP 구동 원리</h1>
+<p>
+</p>
+
+<h2>결론</h2>
+<p>HTML 콘텐츠를 출력하기 위해 자바 코드를 작성하지 않는 것 만으로 이미 JSP 가치는 충분하다!</p>
+
+<p>지금까지 그냥 편안하게 작성한 이 모든 텍스트는 Servlet 클래스를 만들 때 그대로 출력문 코드로 바뀐다. </p>
+</body>
+</html>

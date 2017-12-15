@@ -1,0 +1,9 @@
+package step9;
+
+import javax.servlet.http.HttpServlet;
+
+@SuppressWarnings("serial")
+@WebServlet("/step9/OtherServlet")
+public class OtherServlet extends HttpServlet {
+
+}

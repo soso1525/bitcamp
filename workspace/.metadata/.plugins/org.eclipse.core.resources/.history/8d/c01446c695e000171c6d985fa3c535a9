@@ -1,0 +1,6 @@
+@charset "UTF-8";
+
+pre {
+	background-color: gray;
+	border: 3px dashed darkgray;
+}

@@ -1,0 +1,15 @@
+package step8;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/step8/Servlet07")
+public class Servlet07 extends HttpServlet {
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse res) {
+        req.setCharacterEncoding("UTF-8");
+
+    }
+}

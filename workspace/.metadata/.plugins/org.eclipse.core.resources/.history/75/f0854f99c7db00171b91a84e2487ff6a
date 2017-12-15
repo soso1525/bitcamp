@@ -1,0 +1,6 @@
+package java100.app.listener;
+
+//웹애플리케이션 시작 시 스프링 IoC 컨테이너를 준비시키는 일을 한다
+public class ContextLoaderListener implements ServletContextListener {
+
+}

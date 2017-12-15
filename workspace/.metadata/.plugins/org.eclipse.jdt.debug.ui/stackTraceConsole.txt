@@ -1,0 +1,8 @@
+Car c = new Car();
+        Engine engine = new Engine();
+        engine.setCc(900);
+        engine.setName("bit_engine");
+        engine.setValve(16);
+        c.setEngine(engine);
+
+        return c;

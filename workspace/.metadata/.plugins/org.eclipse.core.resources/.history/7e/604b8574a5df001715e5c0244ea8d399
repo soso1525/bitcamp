@@ -1,0 +1,5 @@
+package java100.app.filter;
+
+public class CharacterEncodingFilter implements Filter {
+
+}

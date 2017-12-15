@@ -1,0 +1,18 @@
+package java100.app.listener;
+
+import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
+
+//웹애플리케이션 시작 시 스프링 IoC 컨테이너를 준비시키는 일을 한다
+public class ContextLoaderListener implements ServletContextListener {
+@Override
+public void contextInitialized(ServletContextEvent sce) {
+    // TODO Auto-generated method stub
+    
+}
+@Override
+    public void contextDestroyed(ServletContextEvent sce) {
+        // TODO Auto-generated method stub
+        
+    }
+}

@@ -1,0 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex1/test01</title>
+</head>
+<body>
+<h1>JSP란?</h1>
+<p>
+Servlet 클래스를 만들기 위한 템플릿 파일이다 .<br>
+콘텐츠를 출력하는 자바 코드를 자동으로 생성한다. <br>
+</p>
+</body>
+</html>

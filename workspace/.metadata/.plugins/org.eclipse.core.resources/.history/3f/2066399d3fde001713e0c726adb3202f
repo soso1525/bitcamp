@@ -1,0 +1,9 @@
+package step8;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+@WebServlet("/step8/Servlet07")
+public class Servlet07 extends HttpServlet {
+
+}

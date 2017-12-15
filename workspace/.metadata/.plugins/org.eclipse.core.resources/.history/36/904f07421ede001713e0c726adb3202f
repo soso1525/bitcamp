@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>GET/POST 요청</title>
+</head>
+<body>
+	<h1>GET/POST 요청 구분하여 처리하기</h1>
+	
+	<h2>GET 요청</h2>
+	<form action="Servlet01">
+		name: <input type="text" name="name"><br> 
+		age: <input type ="text" name="age"><br>
+		<button>GET 요청</button>
+	</form>
+
+	<h2>POST 요청</h2>
+	<form action="Servlet01" method="POST">
+		name: <input type="text" name="name"><br> 
+		 age: <input type ="text" name="age"><br>
+		<button>GET 요청</button>
+	</form>
+
+	<h2>4. 자바스크립트: location.href="url"</h2>
+	자바스크립트의 location 객체를 사용하면 GET 요청을 할 수 있다.<br>
+	<button onclick="location.href='Servlet01?name=안중근&age=20'">GET 요청</button>
+
+</body>
+</html>

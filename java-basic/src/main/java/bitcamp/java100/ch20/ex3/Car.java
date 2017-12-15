@@ -1,13 +1,32 @@
 package bitcamp.java100.ch20.ex3;
 
+import java.util.Arrays;
+
+import bitcamp.java100.ch20.ex4.Tire;
+
 public class Car {
     private String model;
     private String color;
     private int capacity;
     private Engine engine;
+    private Tire[] tires;
 
     public Car() {
+        System.out.println("Car()");
+    }
+    
+    @Override
+    public String toString() {
+        return "Car [model=" + model + ", color=" + color + ", capacity=" + capacity + ", engine=" + engine + ", tires="
+                + Arrays.toString(tires) + "]";
+    }
 
+    public Tire[] getTires() {
+        return tires;
+    }
+
+    public void setTires(Tire[] tires) {
+        this.tires = tires;
     }
 
     public String getModel() {

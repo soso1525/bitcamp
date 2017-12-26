@@ -1,85 +1,50 @@
 <%@page import="java100.app.domain.Board"%>
-<%@page import="java.util.List"%>
-<%@page import="java.io.PrintWriter"%>
-<%@page import="java100.app.listener.ContextLoaderListener"%>
-<%@page import="java100.app.dao.BoardDao"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
-<%
-    BoardDao boardDao = ContextLoaderListener.iocContainer.getBean(BoardDao.class);
-    PrintWriter out2 = new PrintWriter(out);
-%>
-
+<%@ page language="java" 
+    contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"
+    trimDirectiveWhitespaces="true"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>    
 <!DOCTYPE html>
 <html>
 <head>
-<title>게시물 관리</title>
-<link rel='stylesheet'
-	href='../node_modules/bootstrap/dist/css/bootstrap.min.css'>
+<title>게시판</title>
+<link rel='stylesheet' href='../node_modules/bootstrap/dist/css/bootstrap.min.css'>
 <link rel='stylesheet' href='../css/common.css'>
 </head>
 <body>
-	<div class='container'>
+<div class='container'>
 
-		<%
-		    out.flush();
-		    RequestDispatcher rd = request.getRequestDispatcher("/header.jsp");
-		    rd.include(request, response);
-		%>
+<jsp:include page="/header.jsp"/>
 
-		<h1>게시물 목록</h1>
-		<p>
-			<a href='form.jsp' class='btn btn-primary btn-sm'>추가</a>
-		</p>
-		<table class='table table-hover'>
-			<thead>
-				<tr>
-					<th>번호</th>
-					<th>제목</th>
-					<th>등록일</th>
-					<th>조회수</th>
-				</tr>
-			</thead>
-			<tbody>
+<h1>게시물 목록</h1>
 
-				<%
-				    try {
-				        List<Board> list = boardDao.selectList();
-				        for (Board board : list) {
-				%>
+<p><a href='form.do' class='btn btn-primary btn-sm'>추가</a></p>
 
-				<tr>
-					<td><%=board.getNo()%></td>
-					<td><a href='view.jsp?no=<%=board.getNo()%>'><%=board.getTitle()%></a></td>
-					<td><%=board.getRegDate()%></td>
-					<td><%=board.getViewCount()%></td>
-				</tr>
+<table class='table table-hover'>
+<thead>
+<tr>
+<th>번호</th><th>제목</th><th>등록일</th><th>조회수</th>
+</tr>
+</thead>
+<tbody>
 
-				<%
-				    }
+<c:forEach items="${list}" var="board">
+        <tr>
+        <td>${board.no}</td>
+        <td><a href='view.do?no=${board.no}'>${board.title}</a></td>
+        <td>${board.regDate}</td>
+        <td>${board.viewCount}</td>
+        </tr>
+</c:forEach>
 
-				    } catch (Exception e) {
-				        e.printStackTrace();
-				%>
-				
-				<%=e.getMessage()%>
-				
-				<%
-				    }
-				%>
+</tbody>
+</table>
 
-			</tbody>
-		</table>
+<jsp:include page="/footer.jsp"/>
 
-		<%
-		    out.flush();
-		    rd = request.getRequestDispatcher("/footer.jsp");
-		    rd.include(request, response);
-		%>
+</div>
 
-	</div>
-	<script src='../node_modules/jquery/dist/jquery.slim.min.js'></script>
-	<script src='../node_modules/popper.js/dist/umd/popper.min.js'></script>
-	<script src='../node_modules/bootstrap/dist/js/bootstrap.min.js'></script>
+<%@ include file="../jslib.txt"%>
+
 </body>
 </html>

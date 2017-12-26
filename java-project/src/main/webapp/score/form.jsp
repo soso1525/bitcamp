@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,35 +10,33 @@
 </head>
 <body>
 	<div class='container'>
-		<%
-		    out.flush();
-		    RequestDispatcher rd = request.getRequestDispatcher("/header.jsp");
-		    rd.include(request, response);
-		%>
-		<h1>성적 등록</h1>
-		<form action='add.jsp' method='post'>
+
+		<jsp:include page="/header.jsp" />
+
+		<h1>성적 상세 정보</h1>
+		<form action="add.do" method='post'>
 			<div class='form-group row'>
 				<label for='name' class='col-sm-2 col-form-label'>이름</label>
 				<div class='col-sm-10'>
-					<input id='name' type='text' class='form-control' name='name'>
+					<input class='form-control' id='name' type='text' name='name'>
 				</div>
 			</div>
 			<div class='form-group row'>
 				<label for='kor' class='col-sm-2 col-form-label'>국어</label>
 				<div class='col-sm-10'>
-					<input id='kor' type='number' class='form-control' name='kor'>
+					<input class='form-control' id='kor' type='number' name='kor'>
 				</div>
 			</div>
 			<div class='form-group row'>
 				<label for='eng' class='col-sm-2 col-form-label'>영어</label>
 				<div class='col-sm-10'>
-					<input id='eng' type='number' class='form-control' name='eng'>
+					<input class='form-control' id='eng' type='number' name='eng'>
 				</div>
 			</div>
 			<div class='form-group row'>
 				<label for='math' class='col-sm-2 col-form-label'>수학</label>
 				<div class='col-sm-10'>
-					<input id='math' type='number' class='form-control' name='math'>
+					<input class='form-control' id='math' type='number' name='math'>
 				</div>
 			</div>
 			<div class='form-group row'>
@@ -48,14 +45,12 @@
 				</div>
 			</div>
 		</form>
-		<%
-		    out.flush();
-		    rd = request.getRequestDispatcher("/footer.jsp");
-		    rd.include(request, response);
-		%>
+
+		<jsp:include page="/footer.jsp" />
+
 	</div>
-	<script src='../node_modules/jquery/dist/jquery.slim.min.js'></script>
-	<script src='../node_modules/popper.js/dist/umd/popper.min.js'></script>
-	<script src='../node_modules/bootstrap/dist/js/bootstrap.min.js'></script>
+
+	<%@ include file="../jslib.txt"%>
+
 </body>
 </html>

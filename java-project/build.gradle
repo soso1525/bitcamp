@@ -31,11 +31,17 @@ dependencies {
     // Use JUnit test framework
     testCompile 'junit:junit:4.12'
     
-    // Use reflections API00000000
+    // Use reflections API
     compile group: 'org.reflections', name: 'reflections', version: '0.9.11'
     
-    // Use Spring framework
-    compile 'org.springframework:spring-context:5.0.2.RELEASE'
+    // Use SpringIoC Container Library => 아래 Web MVC framework에 포함되어 있음
+    // compile 'org.springframework:spring-context:5.0.2.RELEASE'
+    
+    // Spring Web-MVC framework
+    compile group: 'org.springframework', name: 'spring-webmvc', version: '5.0.2.RELEASE'
+    
+    //JSTL
+    compile group: 'javax.servlet', name: 'jstl', version: '1.2'
     
     // Use Servlet
     providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'

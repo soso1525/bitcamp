@@ -22,7 +22,8 @@
 		scope="page|request|session|application"/><br>
 	</p>
 
-	<jsp:useBean id="member" class="java100.app.domain.Member" scope="request"></jsp:useBean>
+	<jsp:useBean id="member" class="java100.app.domain.Member"
+		scope="request"></jsp:useBean>
 
 	이름: ${requestScope.member.name}
 	<br> 나이: ${requestScope.member.age}

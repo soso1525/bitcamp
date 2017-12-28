@@ -29,7 +29,8 @@
 			<list>
 				<bean
 					class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
-				<!-- <bean class="org.springframework.http.converter.StringHttpMessageConverter"/> -->
+				<bean
+					class="org.springframework.http.converter.StringHttpMessageConverter" />
 			</list>
 		</property>
 	</bean>
@@ -43,7 +44,8 @@
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<!-- JSTL을 사용할 경우 다음의 뷰 처리기를 등록 -->
-		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
 		<property name="prefix" value="/" />
 		<property name="suffix" value=".jsp" />
 	</bean>

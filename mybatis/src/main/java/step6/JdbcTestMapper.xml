@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="JdbcTestMapper">
+	<select id="findAll" resultType="java.util.Map">select * from jdbc_test</select>
+	<select id="findByNo" resultType="java.util.Map" parameterType="int">select
+		* from jdbc_test where no=#{value}
+	</select>
+
+	<!-- parameterType은 SQL을 실행할 때 SqlSession이 넘겨주는 객체의 타입 -->
+	<insert id="insert" parameterType="java.util.Map">insert into
+		jdbc_test(title,conts,regdt) values(#{title}, #{contents}, now())
+	</insert>
+	<update id="update" parameterType="java.util.Map">update jdbc_test set
+		title=#{title}, conts=#{contents} where no=#{no}
+	</update>
+	<delete id="delete" parameterType="int">delete from jdbc_test where
+		no=#{value}
+	</delete>
+
+	<resultMap type="board" id="boardMap">
+		<id column="no" property="no" /> <!-- primary key -->
+		<!-- column == property <result column="title" property="title" /> 생략가능(연결해 
+			줄 필요 없음) -->
+		<result column="conts" property="contents" />
+		<result column="regdt" property="createdDate" />
+		<result column="vwcnt" property="viewCount" />
+	</resultMap>
+
+	<select id="findAll" resultMap="boardMap">
+		select
+		no,
+		title,
+		regdt,
+		vwcnt
+		from jdbc_test
+	</select>
+
+	<insert id="insert" parameterType="board">
+		insert into
+		jdbc_test(title,conts,regdt)
+		values(#{title},#{contents},now())
+	</insert>
+
+	<update id="update" parameterType="board">
+		update jdbc_test set
+		title=#{title},
+		conts=#{contents}
+		where no=#{no}
+	</update>
+
+	<delete id="delete" parameterType="int">
+		delete from jdbc_test where
+		no=#{value}
+	</delete>
+
+	<select id="findByNo" resultMap="board" parameterType="int">
+		select
+		no,
+		title,
+		conts,
+		regdt,
+		vwcnt
+		from jdbc_test
+		where no=#{value}
+	</select>
+
+	<!-- parameterType이 java primitive type인 경우 값을 꺼낼 때 이름은 의미가 없음 (아무거나 괜찮아요) -->
+</mapper>

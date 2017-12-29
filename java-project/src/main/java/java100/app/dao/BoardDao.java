@@ -1,12 +1,14 @@
 package java100.app.dao;
 
 import java.util.List;
+import java.util.Map;
+
 import java100.app.domain.Board;
 
 public interface BoardDao {
-    Board selectOne(int no);
-    int delete(int no);
-    int update(Board board);
+    List<Board> findAll(Map<String, Object> data);
+    Board findByNo(int no);
     int insert(Board board);
-    List<Board> selectList();
+    int update(Board board);
+    int delete(int no);
 }

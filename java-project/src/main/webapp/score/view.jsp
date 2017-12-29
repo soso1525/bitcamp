@@ -1,14 +1,8 @@
 <%@page import="java100.app.dao.ScoreDao"%>
-<%@page import="java100.app.listener.ContextLoaderListener"%>
 <%@page import="java100.app.domain.Score"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%
-	ScoreDao scoreDao = ContextLoaderListener.iocContainer
-			.getBean(ScoreDao.class);
-	response.setContentType("text/html;charset=UTF-8");
-%>
 <!DOCTYPE html>
 <html>
 <head>

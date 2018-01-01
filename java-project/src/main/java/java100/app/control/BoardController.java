@@ -25,11 +25,7 @@ public class BoardController {
 
     @RequestMapping("/board/list")
     public String list(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        Map<String, Object> data = new HashMap<>();
-        data.put("orderColumn", "regdt");
-        data.put("align", "desc");
-
-        List<Board> list = boardDao.findAll(data);
+        List<Board> list = boardDao.selectList();
         request.setAttribute("list", list);
         return "/board/list.jsp";
     }
@@ -55,7 +51,8 @@ public class BoardController {
     @RequestMapping("/board/view")
     public String view(@RequestParam("no") int no, HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        Board board = boardDao.findByNo(no);
+    	boardDao.upView(no);
+        Board board = boardDao.selectOne(no);
         request.setAttribute("board", board);
         return "/board/view.jsp";
 
